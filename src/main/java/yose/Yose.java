@@ -41,6 +41,6 @@ public class Yose {
     public static void main(String[] args) throws IOException {
         Yose yose = new Yose(port(args));
         yose.start();
-        System.out.print("To play the game visit " + yose.uri());
+        System.out.print("To test the game visit " + yose.uri());
     }
 }
