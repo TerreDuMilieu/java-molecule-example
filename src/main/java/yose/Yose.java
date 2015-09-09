@@ -44,6 +44,7 @@ public class Yose {
         htmlBody += "<br/>Claude";
         htmlBody += "<br/>Xavier";
         htmlBody += "<br/>Anthony";
+        htmlBody += "<br/>toto";
         htmlBody += "</body>";
         return htmlBody;
     }
