@@ -10,12 +10,13 @@ import yose.YoseDriver;
 import java.io.IOException;
 
 import static com.vtence.molecule.testing.http.HttpResponseAssert.assertThat;
+import static org.junit.Assert.*;
 
 public class StartWorld {
 
-    YoseDriver yose = new YoseDriver(9999);
+    YoseDriver yose = new YoseDriver(8080);
 
-    HttpRequest request = new HttpRequest(9999);
+    HttpRequest request = new HttpRequest(8080);
     HttpResponse response;
 
     @Before
@@ -33,6 +34,11 @@ public class StartWorld {
         yose.home().displaysGreeting("Hello Yose");
     }
 
+    @Test
+	public void checkRefToSource() throws IOException {
+		yose.home().displaysGreeting("href=\"https://github.com/TerreDuMilieu/java-molecule-example\"");
+	}
+    
     @Test
     public void firstWebServiceChallenge() throws IOException {
         response = request.get("/ping");

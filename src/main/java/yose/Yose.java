@@ -37,6 +37,7 @@ public class Yose {
         String htmlBody = "<html><head></head><body>";
         htmlBody += "Hello Yose";
         htmlBody += "<br/><a id=\"contact-me-link\" href=\"contactme\">Contact us</a>";
+        htmlBody += "<br/><a id=\"gitHubLink\" href=\"https://github.com/TerreDuMilieu/java-molecule-example\">GitHub link</a>";
         htmlBody += "<br/>Team members:";
         htmlBody += "<br/>Philippe";
         htmlBody += "<br/>Sandrine";
