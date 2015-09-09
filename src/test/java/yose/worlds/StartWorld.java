@@ -40,6 +40,11 @@ public class StartWorld {
 	}
     
     @Test
+	public void checkRefToSourceID() throws IOException {
+		yose.home().displaysGreeting("id=\"repository-link\"");		
+	}
+    
+    @Test
     public void firstWebServiceChallenge() throws IOException {
         response = request.get("/ping");
 
