@@ -47,4 +47,9 @@ public class StartWorld {
                             .hasContentType("application/json")
                             .hasBodyText("{\"alive\":true}");
     }
+
+    @Test
+    public void portfolioChallenge() throws IOException {
+        yose.home().displaysGreeting("contact-me-link");
+    }
 }
