@@ -13,9 +13,9 @@ import static com.vtence.molecule.testing.http.HttpResponseAssert.assertThat;
 
 public class StartWorld {
 
-    YoseDriver yose = new YoseDriver(9999);
+    YoseDriver yose = new YoseDriver(8080);
 
-    HttpRequest request = new HttpRequest(9999);
+    HttpRequest request = new HttpRequest(8080);
     HttpResponse response;
 
     @Before
@@ -40,5 +40,10 @@ public class StartWorld {
         assertThat(response).isOK()
                             .hasContentType("application/json")
                             .hasBodyText("{\"alive\":true}");
+    }
+
+    @Test
+    public void portfolioChallenge() throws IOException {
+        yose.home().displaysGreeting("contact-me-link");
     }
 }
