@@ -1,7 +1,9 @@
 package yose.worlds;
 
+//import com.sun.source.tree.AssertTree;
 import com.vtence.molecule.testing.http.HttpRequest;
 import com.vtence.molecule.testing.http.HttpResponse;
+import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,12 +12,13 @@ import yose.YoseDriver;
 import java.io.IOException;
 
 import static com.vtence.molecule.testing.http.HttpResponseAssert.assertThat;
+import static org.junit.Assert.*;
 
 public class StartWorld {
 
-    YoseDriver yose = new YoseDriver(8081);
+    YoseDriver yose = new YoseDriver(8080);
 
-    HttpRequest request = new HttpRequest(8081);
+    HttpRequest request = new HttpRequest(8080);
     HttpResponse response;
 
     @Before
@@ -34,6 +37,16 @@ public class StartWorld {
     }
 
     @Test
+	public void checkRefToSource() throws IOException {
+		yose.home().displaysGreeting("href=\"https://github.com/TerreDuMilieu/java-molecule-example\"");
+	}
+    
+    @Test
+	public void checkRefToSourceID() throws IOException {
+		yose.home().displaysGreeting("id=\"repository-link\"");		
+	}
+    
+    @Test
     public void firstWebServiceChallenge() throws IOException {
         response = request.get("/ping");
 
@@ -41,4 +54,15 @@ public class StartWorld {
                             .hasContentType("application/json")
                             .hasBodyText("{\"alive\":true}");
     }
+
+    @Test
+    public void identifierAvailability() throws IOException {
+
+        Assert.assertTrue(yose.findIdentifier("contact-me-link"));
+    }
+    
+    @Test
+	public void identifierAvailabilitySearchingID() throws IOException {
+        Assert.assertTrue(yose.findIdentifier("repository-link"));		
+	}
 }

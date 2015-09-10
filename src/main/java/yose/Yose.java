@@ -19,7 +19,8 @@ public class Yose {
         final Gson gson = new Gson();
 
         server.start(new DynamicRoutes() {{
-            get("/").to((request, response) -> response.body("Hello Yose"));
+            get("/").to((request, response) -> response.body(homePage()));
+            get("/contactme").to((request, response) -> response.body("<a href=\"mailto:terredumilieu22@gmail.com\">Click here !</a>"));
             get("/ping").to(new Ping(gson)::pong);
             get("/primefactor").to(new PrimeFactorWeb(gson)::Decomposition);
 
@@ -35,6 +36,22 @@ public class Yose {
 
     public void stop() throws IOException {
         server.stop();
+    }
+
+    private String homePage() {
+        String htmlBody = "<html><head></head><body>";
+        htmlBody += "Hello Yose";
+        htmlBody += "<br/><a id=\"contact-me-link\" href=\"contactme\">Contact us</a>";
+        htmlBody += "<br/><a id=\"repository-link\" href=\"https://github.com/TerreDuMilieu/java-molecule-example\">GitHub link</a>";
+        htmlBody += "<br/>Team members:";
+        htmlBody += "<br/>Philippe";
+        htmlBody += "<br/>Sandrine";
+        htmlBody += "<br/>Balazs";
+        htmlBody += "<br/>Claude";
+        htmlBody += "<br/>Xavier";
+        htmlBody += "<br/>Anthony";
+        htmlBody += "</body>";
+        return htmlBody;
     }
 
     private static final int PORT = 0;
