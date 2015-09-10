@@ -43,6 +43,7 @@ public class Yose {
         htmlBody += "Hello Yose";
         htmlBody += "<br/><a id=\"contact-me-link\" href=\"contactme\">Contact us</a>";
         htmlBody += "<br/><a id=\"repository-link\" href=\"https://github.com/TerreDuMilieu/java-molecule-example\">GitHub link</a>";
+        htmlBody += "<br/><a id=\"ping-challenge-link\" href=\"http://limitless-fjord-7303.herokuapp.com/ping\">Portfolio Ping link</a>";
         htmlBody += "<br/>Team members:";
         htmlBody += "<br/>Philippe";
         htmlBody += "<br/>Sandrine";
