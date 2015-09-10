@@ -5,7 +5,7 @@ import java.util.List;
 
 
 public class PrimeFactor {
-	static Integer [] calcPow2(int numberToDecompose){
+	public static Integer [] calcPow2(int numberToDecompose){
 		List <Integer> listPrimeFactor = new ArrayList<Integer>();
 		int [] tabFactPremier=new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23};
 		
