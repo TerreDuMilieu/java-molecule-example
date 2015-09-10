@@ -1,4 +1,4 @@
-[![Travis Build Status](https://travis-ci.org/yosethegame/java-molecule-example.svg?branch=master)](https://travis-ci.org/yosethegame/java-molecule-example)
+[![Travis Build Status](https://travis-ci.org/TerreDuMilieu/java-molecule-example.svg?branch=master)](https://travis-ci.org/TerreDuMilieu/java-molecule-example)
 
 YoseTheGame  :o)
 
