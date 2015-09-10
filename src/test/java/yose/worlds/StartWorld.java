@@ -1,7 +1,9 @@
 package yose.worlds;
 
+import com.sun.source.tree.AssertTree;
 import com.vtence.molecule.testing.http.HttpRequest;
 import com.vtence.molecule.testing.http.HttpResponse;
+import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,9 +15,9 @@ import static com.vtence.molecule.testing.http.HttpResponseAssert.assertThat;
 
 public class StartWorld {
 
-    YoseDriver yose = new YoseDriver(9999);
+    YoseDriver yose = new YoseDriver(8080);
 
-    HttpRequest request = new HttpRequest(9999);
+    HttpRequest request = new HttpRequest(8080);
     HttpResponse response;
 
     @Before
@@ -40,5 +42,13 @@ public class StartWorld {
         assertThat(response).isOK()
                             .hasContentType("application/json")
                             .hasBodyText("{\"alive\":true}");
+    }
+
+    @Test
+    public void identifierAvailability() throws IOException {
+
+        response = request.get("/");
+
+        Assert.assertTrue(yose.findIdentifier("contact-me-link"));
     }
 }
