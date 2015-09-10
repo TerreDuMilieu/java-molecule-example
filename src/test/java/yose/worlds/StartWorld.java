@@ -1,7 +1,9 @@
 package yose.worlds;
 
+import com.sun.source.tree.AssertTree;
 import com.vtence.molecule.testing.http.HttpRequest;
 import com.vtence.molecule.testing.http.HttpResponse;
+import junit.framework.Assert;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -54,7 +56,10 @@ public class StartWorld {
     }
 
     @Test
-    public void portfolioChallenge() throws IOException {
-        yose.home().displaysGreeting("contact-me-link");
+    public void identifierAvailability() throws IOException {
+
+        response = request.get("/");
+
+        Assert.assertTrue(yose.findIdentifier("contact-me-link"));
     }
 }

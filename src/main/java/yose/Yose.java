@@ -20,7 +20,7 @@ public class Yose {
 
         server.start(new DynamicRoutes() {{
             get("/").to((request, response) -> response.body(homePage()));
-            get("/contactme").to((request, response) -> response.body("mailto:terredumilieu22@gmail.com"));
+            get("/contactme").to((request, response) -> response.body("<a href=\"mailto:terredumilieu22@gmail.com\">Click here !</a>"));
             get("/ping").to(new Ping(gson)::pong);
         }});
     }
