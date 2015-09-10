@@ -65,4 +65,16 @@ public class StartWorld {
 	public void identifierAvailabilitySearchingID() throws IOException {
         Assert.assertTrue(yose.findIdentifier("repository-link"));		
 	}
+   
+    @Test
+	public void pingChallengeLinkIDPesent() throws Exception {
+        Assert.assertTrue(yose.findIdentifier("ping-challenge-link"));				
+	}
+    
+    @Test
+	public void pingChallengeLinkURLPesent() throws IOException {
+		yose.home().displaysGreeting("href=\"http://limitless-fjord-7303.herokuapp.com/ping\"");
+	}
+    
+    
 }
