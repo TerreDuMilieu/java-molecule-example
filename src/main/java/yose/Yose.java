@@ -23,7 +23,7 @@ public class Yose {
             get("/contactme").to((request, response) -> response.body("<a href=\"mailto:terredumilieu22@gmail.com\">Click here !</a>"));
             get("/ping").to(new Ping(gson)::pong);
             get("/primeFactors").to(new PrimeFactorWeb(gson)::Decomposition);
-
+           // get("/primeFactors").to(new PrimeFactorWeb(gson)::Decomposition);
            
             
             ;
